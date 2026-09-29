@@ -4,5 +4,9 @@ document.querySelector('#checkout').onclick=openCheckout;
 document.querySelector('#checkoutClose').onclick=closeCheckout;
 document.querySelector('#checkoutModal').onclick=e=>{if(e.target.id==='checkoutModal')closeCheckout()};
 document.querySelectorAll('.pickup').forEach(b=>b.onclick=()=>{document.querySelectorAll('.pickup').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.querySelector('#selectedPlace').textContent=b.dataset.place});
+const PACKETA_API_KEY='';
+const packetaOptions={language:'sk',country:'sk',view:'modal',vendors:[{country:'sk'},{country:'sk',group:'zbox'}],valueFormat:'"Packeta",id,carrierId,carrierPickupPointId,name,city,street'};
+function openPacketa(){if(!PACKETA_API_KEY){alert('Skutočnú Packeta mapu zapojíme po nastavení Packeta API kľúča v účte rodiča.');return}Packeta.Widget.pick(PACKETA_API_KEY,point=>{if(point)document.querySelector('#selectedPlace').textContent=point.formatedValue||[point.name,point.street,point.city].filter(Boolean).join(', ')},packetaOptions)}
+document.querySelector('#packetaMapBtn').onclick=openPacketa;
 document.querySelector('#sendOrder').onclick=()=>{const name=document.querySelector('#orderName').value.trim(),email=document.querySelector('#orderEmail').value.trim(),phone=document.querySelector('#orderPhone').value.trim(),place=document.querySelector('#selectedPlace').textContent;if(!name||!email||!phone){alert('Vyplň prosím meno, e-mail a telefón.');return}alert('Objednávka je pripravená!\n\n'+name+'\n'+email+'\n'+phone+'\n'+place+'\n\nV ďalšom kroku to napojíme na skutočnú Packetu a odosielanie objednávok.');closeCheckout()};
 render();renderTop();renderCart();
