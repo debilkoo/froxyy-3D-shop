@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FROXYYY 3D SHOP</title><link rel="stylesheet" href="new-shop.css">
+</head>
+<body>
+<header class="nav"><a class="brand" href="#"><span>F</span> FROXYYY <small>3D SHOP</small></a><nav><a href="#shop">Shop</a><a href="#custom">Custom</a><a href="#about">O nás</a></nav><button id="cartBtn">Košík <b id="cartCount">0</b></button></header>
+<main>
+<section class="hero"><div><p class="eyebrow">3D PRINTED • GAMING • FROXYYY</p><h1>Vylepši svoj<br><em>gaming setup.</em></h1><p class="lead">Originálne 3D tlačené doplnky pre gamerov, vyrobené s vibeom FROXYYY.</p><a class="btn" href="#shop">Pozrieť shop →</a></div><div class="heroArt"><div class="cube">F</div><span>3D PRINTED</span></div></section>
+<section id="shop"><div class="head"><div><p class="eyebrow">FROXYYY SHOP</p><h2>Vyber si svoj kúsok.</h2></div><div class="filters"><button class="active" data-cat="all">Všetko</button><button data-cat="gaming">Gaming</button><button data-cat="setup">Setup</button><button data-cat="dekor">Dekor</button></div></div><div id="products" class="grid"></div></section>
+<section id="custom" class="custom"><div class="customIcon">✦</div><div><p class="eyebrow">FROXYYY CUSTOM</p><h2>Vlastná kľúčenka</h2><p>Napíš meno, vyber farbu a vytvor si vlastný FROXYYY kúsok.</p><button class="btn" id="customOpen">Vytvoriť →</button></div></section>
+<section id="about" class="about"><p class="eyebrow">O NÁS</p><h2>Malé 3D tlače.<br>Veľký gaming vibe.</h2><p>FROXYYY tvorí praktické a štýlové doplnky pre stoly, setupy a gamerov.</p></section>
+</main>
+<aside id="cart"><div class="cartTop"><h2>Tvoj košík</h2><button id="closeCart">×</button></div><div id="cartItems"></div><div class="sum"><span>Spolu</span><strong id="total">0,00 €</strong></div><button class="btn full" id="checkout">Objednať</button></aside><div id="overlay"></div>
+<div class="modal" id="customModal"><div class="modalCard"><button class="x" id="customClose">×</button><p class="eyebrow">CUSTOM</p><h2>Vlastná kľúčenka</h2><input id="keyName" maxlength="18" placeholder="Tvoje meno"><div class="choices"><button class="active" data-color="Čiernobiela">Čiernobiela</button><button data-color="Farebná">Farebná</button></div><div class="preview" id="keyPreview">TVOJE MENO</div><div class="sum"><span>Cena</span><strong>6,90 €</strong></div><button class="btn full" id="addCustom">Pridať do košíka</button></div></div>
+<div class="modal" id="checkoutModal"><div class="modalCard"><button class="x" id="checkoutClose">×</button><p class="eyebrow">OBJEDNÁVKA</p><h2>Dokonči objednávku</h2><input id="orderName" placeholder="Meno a priezvisko"><input id="orderEmail" type="email" placeholder="E-mail"><input id="orderPhone" type="tel" placeholder="Telefón"><input id="orderPlace" placeholder="Mesto / obec"><p class="hint">Po odoslaní objednávky sa vám ozveme a dohodneme dopravu a platbu.</p><button class="btn full" id="sendOrder">Odoslať objednávku →</button></div></div>
+<script src="new-shop.js"></script>
+</body></html>
